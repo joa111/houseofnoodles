@@ -12,6 +12,12 @@ const InvoiceModal = ({ orderId, onClose }) => {
 
   useEffect(() => {
     const fetchInvoice = async () => {
+      // Prevent fetching if orderId is missing/undefined
+      if (!orderId) {
+        setLoading(false);
+        return;
+      }
+
       try {
         const invoiceData = await getInvoiceByOrderId(orderId);
         setInvoice(invoiceData);
