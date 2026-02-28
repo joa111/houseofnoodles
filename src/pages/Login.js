@@ -111,7 +111,6 @@ const Login = () => {
           <div className="z-30 relative mt-6">
             <button
               type="submit"
-              onClick={handleLogin}
               disabled={loading}
               className={`group relative w-full flex justify-center py-4 px-4 border border-transparent text-lg font-bold rounded-lg text-white transition-all duration-200 shadow-xl ${loading
                 ? 'bg-gray-400 cursor-not-allowed'
