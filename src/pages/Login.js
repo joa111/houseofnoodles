@@ -13,7 +13,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      await login(email, password);
+      await login(email.trim(), password);
       navigate('/');
     } catch (error) {
       setError(error.message);
@@ -52,6 +52,8 @@ const Login = () => {
                 name="email"
                 type="email"
                 autoComplete="email"
+                autoCapitalize="none"
+                autoCorrect="off"
                 required
                 className="appearance-none rounded-lg relative block w-full pl-10 px-3 py-3 border border-gray-300 placeholder-gray-400 text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent sm:text-sm transition-all duration-200 bg-gray-50 focus:bg-white"
                 placeholder="Email address"
